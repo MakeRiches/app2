@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">app2</string>
+    <string name="error_comprobacion_usuario">Doesnt exist this username for the selected plataform</string>
+    <string name="error_api">We cant connect with the server, please try it later</string>
 </resources>
