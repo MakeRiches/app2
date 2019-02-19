@@ -1,8 +1,9 @@
 package com.apps.app2
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
+import android.widget.*
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -22,10 +23,32 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        this.inicializarFuenteTextos()
+
+
         this.cargarAnunciosBanner()
+
+//        this.obtenerDatosIntroducidos()
     }
 
+    /**
+     * Establece la fuente personalizada a los textos.
+     */
+    private fun inicializarFuenteTextos() {
+        var customFont = Typeface.createFromAsset(assets, "font/fortnite.ttf")
 
+        val introducirUsuario = findViewById<TextView>(R.id.introducir_usuario_textView)
+        val nombreUsuario = findViewById<EditText>(R.id.usuario_editText)
+
+        val seleccionarPlataforma = findViewById<TextView>(R.id.seleccionar_plataforma_textView)
+        val plataforma = findViewById<Spinner>(R.id.plataforma_spinner)
+
+        introducirUsuario.typeface = customFont
+        nombreUsuario.typeface = customFont
+        seleccionarPlataforma.typeface = customFont
+//        plataforma.typeface = customFont
+
+    }
 
     /**
      * Carga los anuncios del banner.
@@ -37,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
             .build()
         adView.loadAd(adRequest)
     }
-
 
     /**
      * Comprueba si existe un nombreUsuario para una plataforma.

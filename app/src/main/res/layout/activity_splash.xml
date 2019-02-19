@@ -10,7 +10,7 @@
     <ImageView
             android:layout_width="50mm"
             android:layout_height="50mm"
-            app:srcCompat="@drawable/logo2"
+            app:srcCompat="@drawable/logo"
             android:id="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:adjustViewBounds="false"

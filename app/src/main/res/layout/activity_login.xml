@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LoginActivity">
+        android:fitsSystemWindows="true"
+        tools:context=".LoginActivity" android:background="@drawable/fondo">
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                                        android:id="@+id/adView"
@@ -15,5 +16,54 @@
                                        ads:layout_constraintBottom_toBottomOf="parent"
                                        ads:layout_constraintEnd_toEndOf="parent"
                                        ads:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/introducir_usuario_textView"
+            android:layout_marginTop="228dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/usuario_editText"
+            app:layout_constraintVertical_chainStyle="spread_inside" android:textSize="18sp"
+            android:textColor="@color/colorAccent" android:textStyle="bold"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:id="@+id/usuario_editText" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/introducir_usuario_textView"
+            app:layout_constraintEnd_toEndOf="@+id/introducir_usuario_textView"
+            app:layout_constraintStart_toStartOf="@+id/introducir_usuario_textView"
+            android:textColor="@android:color/white"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seleccionar_plataforma_textView"
+            app:layout_constraintStart_toStartOf="@+id/usuario_editText"
+            app:layout_constraintEnd_toEndOf="@+id/usuario_editText" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/usuario_editText"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/plataforma_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/seleccionar_plataforma_textView"
+            app:layout_constraintStart_toStartOf="@+id/seleccionar_plataforma_textView"
+            app:layout_constraintEnd_toEndOf="@+id/seleccionar_plataforma_textView"
+            android:layout_marginTop="16dp" app:layout_constraintHorizontal_bias="0.501"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iniciar_sesion_button"
+            app:layout_constraintStart_toStartOf="@+id/plataforma_spinner"
+            app:layout_constraintEnd_toEndOf="@+id/plataforma_spinner"
+            app:layout_constraintBottom_toTopOf="@+id/adView"
+            app:layout_constraintTop_toBottomOf="@+id/plataforma_spinner" app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintVertical_bias="0.502"/>
 
 </android.support.constraint.ConstraintLayout>
